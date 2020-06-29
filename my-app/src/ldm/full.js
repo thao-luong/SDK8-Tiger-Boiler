@@ -3,7 +3,13 @@
 /* tslint:disable:variable-name */
 
 /* THIS FILE WAS AUTO-GENERATED USING CATALOG EXPORTER; YOU SHOULD NOT EDIT THIS FILE; GENERATE TIME: 2020-06-26T08:38:43.449Z; */
-import { newAttribute, newMeasure, idRef } from "@gooddata/sdk-model";
+import {
+    newAttribute,
+    newMeasure,
+    idRef,
+    modifySimpleMeasure,
+    newArithmeticMeasure,
+} from "@gooddata/sdk-model";
 export const CCustkey = {
     /**
      * Display Form Title: C custkey
@@ -265,6 +271,7 @@ export const Quantities = newMeasure(idRef("quantity", "measure"));
  * Metric ID: Volume
  * Metric Type: MAQL Metric
  */
+export const QuantitiesRatio = modifySimpleMeasure(Quantities, m => m.title("Ratio").ratio());
 
 export const VolumeRawCostExtendedPriceSubtractedByDiscount = newMeasure(idRef("Volume", "measure"));
 /**
@@ -927,3 +934,7 @@ export const Insights = {
      */
     SomeVisualizationObject: "some_visualization_object",
 };
+export const MAPBOX_TOKEN = process.env.AD_MAPBOX_TOKEN || "";
+export const arithmeticMeasure = newArithmeticMeasure([QuantitiesRatio, CAcctbal.Sum], "sum", m =>
+    m.format("#,##0").title("$ Avg State Daily Costs"),
+);
