@@ -271,7 +271,6 @@ export const Quantities = newMeasure(idRef("quantity", "measure"));
  * Metric ID: Volume
  * Metric Type: MAQL Metric
  */
-export const QuantitiesRatio = modifySimpleMeasure(Quantities, m => m.title("Ratio").ratio());
 
 export const VolumeRawCostExtendedPriceSubtractedByDiscount = newMeasure(idRef("Volume", "measure"));
 /**
@@ -935,6 +934,3 @@ export const Insights = {
     SomeVisualizationObject: "some_visualization_object",
 };
 export const MAPBOX_TOKEN = process.env.AD_MAPBOX_TOKEN || "";
-export const arithmeticMeasure = newArithmeticMeasure([QuantitiesRatio, CAcctbal.Sum], "sum", m =>
-    m.format("#,##0").title("$ Avg State Daily Costs"),
-);
