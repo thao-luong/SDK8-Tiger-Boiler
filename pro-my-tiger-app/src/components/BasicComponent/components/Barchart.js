@@ -10,8 +10,8 @@ import {
 const style = {
     height: 300,
 };
-const changeMeasure = newArithmeticMeasure([Deaths.Sum, PhonesPer1k.Sum], "sum", m => m.title("AM"));
-const filters = newPositiveAttributeFilter(idRef("customer.nation_name"), ["CANADA", "CHINA", "BRAZIL"]);
+const changeMeasure = newArithmeticMeasure([Deaths.Sum, PhonesPer1k.Sum], "SUM", m => m.title("AM"));
+const filters = newPositiveAttributeFilter(Country.Default, ["Angola", "Japan", "Cuba"]);
 export const BarChartExample = () => {
     return (
         <div style={style} className="s-bar-chart">

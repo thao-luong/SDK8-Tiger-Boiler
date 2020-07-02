@@ -8,8 +8,8 @@ import {
     idRef,
 } from "@gooddata/sdk-model";
 
-const changeMeasure = newArithmeticMeasure([DeathRate.Sum, Duration.Sum], "sum", m => m.title("AM"));
-const filters = newPositiveAttributeFilter(idRef("customer.nation_name"), ["CANADA", "CHINA", "BRAZIL"]);
+const changeMeasure = newArithmeticMeasure([DeathRate.Sum, Duration.Sum], "SUM", m => m.title("AM"));
+const filters = newPositiveAttributeFilter(Country.Default, ["Angola", "Japan", "Cuba"]);
 const style = {
     height: 300,
 };

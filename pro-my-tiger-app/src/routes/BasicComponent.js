@@ -23,7 +23,7 @@ const Basic = () => {
     return (
         <Page>
             {/* <ColumnChartExample /> */}
-            <PivotTableSortingExample />
+            {/* <PivotTableSortingExample /> */}
             {/* <AttributeFilterExample/> */}
             {/* <GeoPushpinChartClusteringExample/> */}
             {/* <MeasureValueFilterComponentExample/> */}
@@ -32,7 +32,7 @@ const Basic = () => {
             {/* <BubbleChartExample/> */}
             {/* <BulletChartExample/> */}
             {/* <ComboChartExample/> */}
-            {/* <DonutChartExample/> */}
+            <DonutChartExample />
             {/* <KpiExample/> */}
             {/* <LineChartExample/> */}
             {/* <PieChartExample/> */}

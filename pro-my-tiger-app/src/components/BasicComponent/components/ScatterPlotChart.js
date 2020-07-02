@@ -13,7 +13,7 @@ const yMeasure = Duration.Sum;
 const style = {
     height: 300,
 };
-const filters = newPositiveAttributeFilter(idRef("customer.nation_name"), ["CANADA", "CHINA", "BRAZIL"]);
+const filters = newPositiveAttributeFilter(Country.Default, ["Angola", "Japan", "Cuba"]);
 export const ScatterPlotExample = () => {
     return (
         <div style={style} className="s-scatter-plot">

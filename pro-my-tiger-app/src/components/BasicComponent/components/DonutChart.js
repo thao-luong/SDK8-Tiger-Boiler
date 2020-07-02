@@ -1,22 +1,21 @@
 import React from "react";
 import { DonutChart } from "@gooddata/sdk-ui-charts";
-import { Deaths, Duration, DeathRate } from "../../../ldm/full";
-import {
-    newArithmeticMeasure,
-    newNegativeAttributeFilter,
-    newPositiveAttributeFilter,
-    idRef,
-} from "@gooddata/sdk-model";
-const changeMeasure = newArithmeticMeasure([Deaths.Sum, Duration.Sum], "sum", m => m.title("AM"));
-const filters = newPositiveAttributeFilter(idRef("customer.nation_name"), ["CANADA", "CHINA", "BRAZIL"]);
-const measures = [Deaths.Sum, Duration.Sum, DeathRate.Sum, changeMeasure];
+import { newArithmeticMeasure } from "@gooddata/sdk-model";
+import { Deaths, PhonesPer1k, Country, Gdp } from "../../../ldm/full";
+const changeMeasure = newArithmeticMeasure(
+    [Deaths.Sum, PhonesPer1k.Sum],
+    // @ts-ignore
+    "SUM",
+    m => m.title("AM"),
+);
+const measures = [Deaths.Sum, PhonesPer1k.Sum, Gdp.Sum, changeMeasure];
 const style = {
     height: 300,
 };
 export const DonutChartExample = () => {
     return (
         <div style={style} className="s-donut-chart">
-            <DonutChart measures={measures} filters={[filters]} />
+            <DonutChart measures={measures} />
         </div>
     );
 };

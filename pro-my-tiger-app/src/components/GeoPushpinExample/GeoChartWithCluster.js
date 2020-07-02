@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { GeoPushpinChart } from "@gooddata/sdk-ui-geo";
 import "@gooddata/sdk-ui-geo/styles/css/main.css";
-import { Country, MAPBOX_TOKEN } from "../../ldm/full";
+import { Country } from "../../ldm/full";
 
 export class GeoPushpinChartClusteringExample extends Component {
     render() {
@@ -15,9 +15,9 @@ export class GeoPushpinChartClusteringExample extends Component {
             >
                 <GeoPushpinChart
                     location={Country.GeoCountryLocation}
-                    config={{
-                        mapboxToken: MAPBOX_TOKEN,
-                    }}
+                    // config={{
+                    //     mapboxToken: MAPBOX_TOKEN,
+                    // }}
                     onZoomChanged={this.onZoomChanged}
                     onCenterPositionChanged={this.onCenterPositionChanged}
                     onLoadingChanged={this.onLoadingChanged}
